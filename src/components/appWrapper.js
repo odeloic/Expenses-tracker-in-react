@@ -1,4 +1,9 @@
+import ExpensesList from './expensesList.js'
 export default class AppWrapper extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = this.props.data
+  }
   render () {
     return (
       <div className="main-wrapper">
@@ -15,11 +20,11 @@ export default class AppWrapper extends React.Component {
           <div className="form">
             <form className="new-expense-form">
               <div className="form-group">
-                <label for="title">Title of new expense</label>
+                <label>Title of new expense</label>
                 <input id="title" name="title" type="text" />
               </div>
               <div className="form-group">
-                <label for="amount">Title of new expense</label>
+                <label>Title of new expense</label>
                 <input id="amount" name="amount" type="number" />
               </div>
               <button className="form-button">Add new expense</button>
@@ -28,18 +33,7 @@ export default class AppWrapper extends React.Component {
           <div className="expenses-list-wrapper">
             <ul className="expenses-list">
               <h3>Most recent expenses</h3>
-              <li className="expense">
-                <div className="details">
-                  <h3 className="expense__title">
-                    Bills for groceries
-                  </h3>
-                  <span className="expense__amount">$200.80</span>
-                  <span className="expense__date">2021-01-12</span>
-                </div>
-                <div className="actions">
-                  <button>Delete</button>
-                </div>
-              </li>
+              <ExpensesList expenses={this.props.data.expenses} />
             </ul>
           </div>
         </main>

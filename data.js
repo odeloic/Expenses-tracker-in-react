@@ -1,4 +1,4 @@
-{
+export default {
   "defaultLimit": 1200.2,
   "expenses": [
     {

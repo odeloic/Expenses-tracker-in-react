@@ -6,13 +6,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import ExpensesList from './expensesList.js';
+
 var AppWrapper = function (_React$Component) {
   _inherits(AppWrapper, _React$Component);
 
-  function AppWrapper() {
+  function AppWrapper(props) {
     _classCallCheck(this, AppWrapper);
 
-    return _possibleConstructorReturn(this, (AppWrapper.__proto__ || Object.getPrototypeOf(AppWrapper)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (AppWrapper.__proto__ || Object.getPrototypeOf(AppWrapper)).call(this, props));
+
+    _this.state = _this.props.data;
+    return _this;
   }
 
   _createClass(AppWrapper, [{
@@ -62,7 +67,7 @@ var AppWrapper = function (_React$Component) {
                 { className: "form-group" },
                 React.createElement(
                   "label",
-                  { "for": "title" },
+                  null,
                   "Title of new expense"
                 ),
                 React.createElement("input", { id: "title", name: "title", type: "text" })
@@ -72,7 +77,7 @@ var AppWrapper = function (_React$Component) {
                 { className: "form-group" },
                 React.createElement(
                   "label",
-                  { "for": "amount" },
+                  null,
                   "Title of new expense"
                 ),
                 React.createElement("input", { id: "amount", name: "amount", type: "number" })
@@ -95,38 +100,7 @@ var AppWrapper = function (_React$Component) {
                 null,
                 "Most recent expenses"
               ),
-              React.createElement(
-                "li",
-                { className: "expense" },
-                React.createElement(
-                  "div",
-                  { className: "details" },
-                  React.createElement(
-                    "h3",
-                    { className: "expense__title" },
-                    "Bills for groceries"
-                  ),
-                  React.createElement(
-                    "span",
-                    { className: "expense__amount" },
-                    "$200.80"
-                  ),
-                  React.createElement(
-                    "span",
-                    { className: "expense__date" },
-                    "2021-01-12"
-                  )
-                ),
-                React.createElement(
-                  "div",
-                  { className: "actions" },
-                  React.createElement(
-                    "button",
-                    null,
-                    "Delete"
-                  )
-                )
-              )
+              React.createElement(ExpensesList, { expenses: this.props.data.expenses })
             )
           )
         )
