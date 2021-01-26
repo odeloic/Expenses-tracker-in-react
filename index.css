@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  color: #EBEEF2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1B1B1B;
+  padding: 2.5rem 3.5rem;
+}
+
+.app-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header h3 {
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.budget-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+p.total {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #ABADB0;
+}
+
+p.total span.value {
+  font-size: 3rem;
+  margin-left: 1.5rem;
+  color: #FFFFFFFF;
+}
+
+
+.app-content {
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.app-content .form,
+.app-content .expenses-list-wrapper {
+  flex-basis: 50%;
+}
+
+.expenses-list-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.expenses-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.expenses-list-wrapper h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: right;
+}
+
+.expense {
+  width: 100%;
+  padding: .5rem .2rem 1.5rem;
+  border-bottom: 1px solid #f5f5f5bd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expense .details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.expense__amount {
+  font-size: 1.3rem;
+  color: #F8E71C;
+  margin-bottom: 1.1em;
+}
+
+.expense__date {
+  font-size: 1.3rem;
+  color: #9B9B9B;
+}
+
+.expense .actions button {
+  border: none;
+  background-color: transparent;
+  color: #D0021B;
+  cursor: pointer;
+}
+
+/* new expense form */
+
+.form {
+  width: 100%;
+}
+
+.new-expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.new-expense-form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+
+.form-group label {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem
+}
+
+.form-group input {
+  background-color: transparent;
+  border: 1px solid #f5f5f5bd;
+  width: 80%;
+  padding: 1.5rem .5rem;
+  color: #f5f5f5bd;
+}
+
+.form-button {
+  padding: .5rem 1rem;
+  color: #000000;
+  background-color: #6AA3E5;
+}

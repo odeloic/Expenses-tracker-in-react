@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "npx babel --watch src --out-dir . --presets react-app/prod"
+    "serve": "live-server ./ --port=6060",
+    "start": " npx babel --watch src/ --out-dir dist/ --presets react-app/prod"
   },
   "keywords": [],
   "author": "",
