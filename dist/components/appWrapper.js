@@ -21,6 +21,7 @@ var AppWrapper = function (_React$Component) {
 
     _this.state = { budgetLimit: 0, expenses: [], totalExpenses: 0 };
     _this.handleAddExpenseToList = _this.handleAddExpenseToList.bind(_this);
+    _this.deleteExpense = _this.deleteExpense.bind(_this);
     return _this;
   }
 
@@ -30,6 +31,15 @@ var AppWrapper = function (_React$Component) {
       var expenses = [].concat(_toConsumableArray(this.state.expenses), [expense]);
       this.setState({ expenses: expenses });
       this.setState({ totalExpenses: this.state.totalExpenses + expense.amount });
+    }
+  }, {
+    key: 'deleteExpense',
+    value: function deleteExpense(expenseId) {
+      var expense = this.state.expenses[expenseId];
+      var expenses = this.state.expenses;
+      expenses.splice(expenseId, 1);
+      this.setState({ expenses: expenses });
+      this.setState({ totalExpenses: this.state.totalExpenses - expense.amount });
     }
   }, {
     key: 'render',
@@ -84,7 +94,7 @@ var AppWrapper = function (_React$Component) {
                 null,
                 'Most recent expenses'
               ),
-              React.createElement(ExpensesList, { expenses: this.state.expenses })
+              React.createElement(ExpensesList, { expenses: this.state.expenses, handleDeleteExpense: this.deleteExpense })
             )
           )
         )

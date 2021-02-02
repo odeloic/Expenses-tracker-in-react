@@ -1,4 +1,11 @@
+
+
 export default function Expense(props) {
+  function handleClickOnDelete(expenseId, e) {
+    e.preventDefault()
+    console.log('This expense', expenseId)
+    console.log('Event', e)
+  }
   return (
     <div className="expense">
       <div className="details">
@@ -9,7 +16,7 @@ export default function Expense(props) {
         <span className="expense__date">{ props.date }</span>
       </div>
       <div className="actions">
-        <button>Delete</button>
+        <button onClick={() => props.deleteExpense(props.id)}>Delete</button>
       </div>
     </div>
   )

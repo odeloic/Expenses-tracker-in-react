@@ -8,7 +8,7 @@ export default function ExpensesList(props) {
       return React.createElement(
         "li",
         { key: index },
-        React.createElement(Expense, { title: expense.title, amount: expense.amount, date: expense.date })
+        React.createElement(Expense, { id: index, title: expense.title, amount: expense.amount, date: expense.date, deleteExpense: props.handleDeleteExpense })
       );
     })
   );
